@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="applyflow-api-base-url" content="" />
+    <meta name="theme-color" content="#f7f6fb" />
+    <title>ApplyFlow | Application overview</title>
+    <script>
+      (function () {
+        var theme = null;
+
+        try {
+          theme = localStorage.getItem("applyflow-theme");
+        } catch (_) {
+          // Storage may be unavailable; continue with the system preference.
+        }
+
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').setAttribute(
+          "content",
+          theme === "dark" ? "#14131c" : "#f7f6fb"
+        );
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

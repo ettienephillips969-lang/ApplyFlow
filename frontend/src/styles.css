@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-lg: var(--radius-control);
+  --radius-xl: var(--radius-control);
+  --radius-2xl: var(--radius-card);
+  --radius-3xl: var(--radius-dialog);
+
+  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadow-2xl: 0 24px 48px -12px var(--shadow-color);
+
+  --color-page: var(--page-background);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-muted: var(--surface-muted);
+  --color-skeleton: var(--skeleton);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-ui: var(--border);
+  --color-focus: var(--focus);
+  --color-focus-soft: var(--focus-soft);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-text: var(--brand-text);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-coral: var(--accent-coral);
+  --color-accent-amber: var(--accent-amber);
+  --color-error-surface: var(--error-surface);
+  --color-error-border: var(--error-border);
+  --color-error-text: var(--error-text);
+  --color-success-surface: var(--success-surface);
+  --color-success-text: var(--success-text);
+  --color-status-saved: var(--status-saved);
+  --color-status-saved-text: var(--status-saved-text);
+  --color-status-saved-border: var(--status-saved-border);
+  --color-status-applied: var(--status-applied);
+  --color-status-applied-text: var(--status-applied-text);
+  --color-status-applied-border: var(--status-applied-border);
+  --color-status-interview: var(--status-interview);
+  --color-status-interview-text: var(--status-interview-text);
+  --color-status-interview-border: var(--status-interview-border);
+  --color-status-completed: var(--status-completed);
+  --color-status-completed-text: var(--status-completed-text);
+  --color-status-completed-border: var(--status-completed-border);
+
+  /* Keep the existing Tailwind utility classes while mapping them to semantic theme values. */
+  --color-slate-50: var(--surface-subtle);
+  --color-slate-100: var(--surface-muted);
+  --color-slate-200: var(--border);
+  --color-slate-400: var(--text-muted);
+  --color-slate-500: var(--text-secondary);
+  --color-slate-600: var(--text-secondary);
+  --color-slate-700: var(--text-primary);
+  --color-slate-800: var(--text-primary);
+  --color-slate-900: var(--text-primary);
+
+  --color-indigo-50: var(--brand-soft);
+  --color-indigo-100: var(--focus-soft);
+  --color-indigo-200: var(--brand-soft);
+  --color-indigo-300: var(--focus-soft);
+  --color-indigo-400: var(--focus);
+  --color-indigo-500: var(--brand-hover);
+  --color-indigo-600: var(--brand);
+  --color-indigo-700: var(--brand-text);
+  --color-indigo-800: var(--brand-hover);
+
+  --color-rose-50: var(--error-surface);
+  --color-rose-200: var(--error-border);
+  --color-rose-300: var(--error-border);
+  --color-rose-500: var(--accent-coral);
+  --color-rose-600: var(--error-text);
+  --color-rose-700: var(--error-text);
+  --color-rose-800: var(--error-text);
+
+  --color-emerald-50: var(--success-surface);
+  --color-emerald-500: var(--accent-teal);
+  --color-emerald-700: var(--success-text);
+  --color-amber-400: var(--accent-amber);
+}
+
+:root {
+  color-scheme: light;
+  --page-background: #f7f6fb;
+  --surface: #ffffff;
+  --surface-subtle: #f4f2fa;
+  --surface-muted: #eeecf5;
+  --skeleton: #e8e6ef;
+  --text-primary: #211d32;
+  --text-secondary: #514d62;
+  --text-muted: #777386;
+  --border: #e3e0eb;
+  --focus: #7257f5;
+  --focus-soft: #ded8ff;
+  --brand: #7257f5;
+  --brand-soft: #f0edff;
+  --brand-hover: #5d45dc;
+  --brand-text: #5941d3;
+  --accent-teal: #19b8a6;
+  --accent-coral: #f4779a;
+  --accent-amber: #ffb454;
+  --error-surface: #fff0f4;
+  --error-border: #f3c3d0;
+  --error-text: #9a304c;
+  --success-surface: #e6f8f4;
+  --success-text: #087568;
+  --status-saved: #eef0f5;
+  --status-saved-text: #4d5364;
+  --status-saved-border: #d6dae4;
+  --status-applied: #f0edff;
+  --status-applied-text: #5941d3;
+  --status-applied-border: #d5ccff;
+  --status-interview: #fff4df;
+  --status-interview-text: #805100;
+  --status-interview-border: #f2d49a;
+  --status-completed: #e4f7f3;
+  --status-completed-text: #087568;
+  --status-completed-border: #a8ddd4;
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --radius-dialog: 1.5rem;
+  --shadow-color: rgb(45 35 79 / 0.08);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #14131c;
+  --surface: #1d1b27;
+  --surface-subtle: #242230;
+  --surface-muted: #2d2a3a;
+  --skeleton: #353243;
+  --text-primary: #f3f0fc;
+  --text-secondary: #d0cbde;
+  --text-muted: #a9a3b9;
+  --border: #3b374b;
+  --focus: #a99aff;
+  --focus-soft: #4b416e;
+  --brand: #7257f5;
+  --brand-soft: #30294f;
+  --brand-hover: #a18eff;
+  --brand-text: #c8bdff;
+  --accent-teal: #19b8a6;
+  --accent-coral: #f4779a;
+  --accent-amber: #ffb454;
+  --error-surface: #3a202c;
+  --error-border: #744050;
+  --error-text: #ffb0c3;
+  --success-surface: #1c3936;
+  --success-text: #79ddce;
+  --status-saved: #303442;
+  --status-saved-text: #e0e3ed;
+  --status-saved-border: #4c5264;
+  --status-applied: #30284f;
+  --status-applied-text: #c8bdff;
+  --status-applied-border: #5e5191;
+  --status-interview: #45351e;
+  --status-interview-text: #ffd58a;
+  --status-interview-border: #725628;
+  --status-completed: #1b3a37;
+  --status-completed-text: #7be0d0;
+  --status-completed-border: #2a7167;
+  --shadow-color: rgb(0 0 0 / 0.3);
+}
+
+body {
+  min-width: 320px;
+  background: var(--page-background);
+  color: var(--text-primary);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--text-primary);
+}

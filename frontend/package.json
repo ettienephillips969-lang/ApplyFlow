@@ -1,0 +1,22 @@
+{
+  "name": "applyflow-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "esbuild src/main.jsx --bundle --sourcemap --outfile=public/assets/app.js --servedir=public --serve=127.0.0.1:8001 --watch=forever",
+    "dev:css": "tailwindcss -i src/styles.css -o public/assets/app.css --watch=always",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "esbuild src/main.jsx --bundle --minify --outfile=public/assets/app.js",
+    "build:css": "tailwindcss -i src/styles.css -o public/assets/app.css --minify"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "esbuild": "~0.25.0",
+    "tailwindcss": "^4.0.0"
+  }
+}
